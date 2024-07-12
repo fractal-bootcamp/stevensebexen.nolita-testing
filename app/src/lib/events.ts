@@ -9,7 +9,7 @@ export type AgentEvent = {
   description?: string;
   objectiveComplete?: {
     kind: "ObjectiveComplete";
-    restaurants: string[];
+    stores: string[];
     result: string;
   }
   objectiveFailed: {

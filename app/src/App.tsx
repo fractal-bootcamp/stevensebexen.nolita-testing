@@ -9,10 +9,10 @@ function App() {
   const [url] = React.useState("https://www.duckduckgo.com");
 
   const [objective] = React.useState(
-    "where to find food in",
+    "where to find clothes in",
   );
   const [location, setLocation] = React.useState(
-    "West Village"
+    "Williamsburg Brooklyn"
   )
   const [status, setStatus] = React.useState<Status>("idle");
   const [events, setEvents] = React.useState<string[]>([]);
@@ -21,8 +21,8 @@ function App() {
   const handleEvent = (input: AgentEvent) => {
     setEvents((prev: string[]) => {
       if (input?.["objectiveComplete"]) {
-        if (input?.objectiveComplete?.restaurants) {
-          setRestaurants(input?.objectiveComplete?.restaurants);
+        if (input?.objectiveComplete?.stores) {
+          setRestaurants(input?.objectiveComplete?.stores);
         }
       }
       if (input?.progressAssessment) {
@@ -65,19 +65,8 @@ function App() {
       <h1 className="text-4xl">This is a sample application made with <a className="border-b" href="https://nolita.ai">Nolita</a>.</h1>
       <p>You can start your project by editing the <code>app/src/App.tsx</code> file.</p>
       <p className="max-w-prose">To configure your agent logic, see the <code>agent</code> folder. You can also extend agent capabilities with personal information and custom types in the <code>extensions</code> folder, or additional back-end logic in the <code>server</code> folder.</p>
-      <p className="max-w-prose">
-        This application is a simple example of how you can use Nolita to build
-        a web application that interacts with an agent. The agent in this
-        example is a simple web navigator that finds restaurants in a given
-        location. Restaurants are provided as a custom typed response from the
-        agent in <code>extensions/schema.ts</code>.
-      </p>
-      <p className="max-w-prose">
-        You can modify the objective, query and target site in <code>App.tsx</code> and inspect
-        the events in your browser console.
-      </p>
       <div className="flex flex-col space-y-4 max-w-screen-md border p-4">
-      <p>Enter a location where you want to find food.</p>
+      <p>Enter a location where you want to find clothes.</p>
         <input
           className="p-2 border border-gray-300 rounded"
           type="text"

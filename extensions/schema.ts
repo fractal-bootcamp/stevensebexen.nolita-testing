@@ -2,7 +2,7 @@
 import { z } from "zod";
 
 export const CustomSchema = z.object({
-  restaurants: z.array(z.string().describe("The name of a restaurant")),
+  stores: z.array(z.string().describe("The name of a clothes store")),
 });
 
 export type CustomSchemaType = z.infer<typeof CustomSchema>;
